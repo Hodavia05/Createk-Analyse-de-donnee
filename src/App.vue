@@ -1,23 +1,30 @@
 <template>
-  <div id="app">
-    <h1>Bienvenue sur mon projet Vue.js !</h1>
-    <p>{{ message }}</p>
-    <button @click="changerMessage">Changer le message</button>
-  </div>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view/>
 </template>
 
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      message: 'Bonjour, Vue.js !',
-    };
-  },
-  methods: {
-    changerMessage() {
-      this.message = 'Le message a été changé !';
-    },
-  },
-};
-</script>
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
